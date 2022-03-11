@@ -1,0 +1,768 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./WritingAnHDRShopPlugin.files/filelist.xml">
+<title>HDR Shopプラグインの記述</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>hiramitsu</o:Author>
+  <o:LastAuthor>hiramitsu</o:LastAuthor>
+  <o:Revision>18</o:Revision>
+  <o:TotalTime>23</o:TotalTime>
+  <o:Created>2005-03-17T04:21:00Z</o:Created>
+  <o:LastSaved>2005-03-17T06:05:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>748</o:Words>
+  <o:Characters>4264</o:Characters>
+  <o:Company>NES</o:Company>
+  <o:Lines>35</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>5236</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Century;
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h2
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ Ｐゴシック";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";}
+pre
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"ＭＳ 明朝";}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:405567195;
+	mso-list-template-ids:329428568;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+</head>
+
+<body lang=JA link=blue vlink=blue style='tab-interval:42.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h2><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>HDR Shopプラグインの記述<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>注意：このセクションでは、<span
+lang=EN-US>CまたはC++言語の知識が必要です。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDR
+Shopは、ユーザーが新しい画像編集オペレーションを記述し、またそれをHDR Shopのインターフェースに統合できるように、柔軟なプラグイン・アーキテクチャに対応しています。プラグインは特別なスタンドアローン形式のコマンドラインプログラムであり、、コマンドラインの引数からパラメータを受け取ります。HDRShopへのインターフェイスは、コマンドラインの引数と標準のパイプラインを使用するため、プラグインはどのような言語でも記述することができ、画像上で任意のプロセスを行うことができます。このチュートリアルでは、C++を記述言語と仮定して説明します。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>簡単な例として、画像をぼかしたり、オプションで半分のサイズに変更したりするプラグインの記述方法を紹介します。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>プラグインは、<span
+lang=EN-US>stdin 経由でHDR Shopと通信します。プラグインがシングル・コマンドライン引数&quot;--help&quot; もしくは
+&quot;/?&quot; で呼び出されたとき、指定のフォーマットでパラメータのリストを出力し、そして終了しなければいけません。このプラグインでは、以下のメッセージを
+stderr に出力します:<o:p></o:p></span></span></p>
+
+<pre style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>This is a simple test plugin to blur an image.<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>HDRSHOPFLAGS:<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>HDRSHOPVERSION: 1.0.1<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>USAGE: sample_plugin [input.pfm] [output.pfm] [options]<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>OPTIONS:<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/V:[int=10]<span style="mso-spacerun: yes">&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Blur Variance<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/D<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Downsample 50%<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>プラグインは、次の各々のブロックにプラグイン自身の情報を示さなければいけません。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>はじめのブロックは、説明書、概要、その他等々のユーザーデータです。<span
+     lang=EN-US>HDR Shopは、プラグインが呼ばれたときにユーザーに表示する以外は、これを無視します。 <o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:11.0pt;
+     mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDRSHOPFLAGS: 今は、ブランクにしてください。次のバージョンで使う箇所です。<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:11.0pt;
+     mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDRSHOPVERSION: プラグインが記述されたHDR
+     Shopのバージョンです。<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:11.0pt;
+     mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>USAGE: 次の順番で表示してください：プラグインの実行可能ファイル、[input.pfm]プラグインが（pfmフォーマットで）入力画像を必要とする場合、[output.pfm]
+     プラグインが（pfmフォーマットで）出力画像を必要とする場合、[options] プラグインがオプションを必要とする場合。<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:11.0pt;
+     mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>OPTIONS: プラグインが許可するコマンドラインのオプション。このデータは、ユーザーがオプションを入力するUIを作成するために、HDR
+     Shopによって解析されます。<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>オプションは、一行毎に指定されます。各々のオプションは、識別子、オプションのパラメータ記述子、オプションの説明内容を持ちます。各ラインは（空白を無視して）、<span
+lang=EN-US>identifier文字列から始めなければいけません。例えば、 “/V:”と<span style="mso-spacerun:
+yes">&nbsp; </span>“/D”は、サンプルのプラグインのidentifier文字列です。identifierは、空白またはパラメータ記述子によって終了します。このことは、どのようにオプションを指定したいかに関して、若干のゆとりを与えてくれます。つまり
+、“-variance=”や<span style="mso-spacerun: yes">&nbsp; </span>“-downsample”をidentifierとして代わりに使うこともできるのです。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin-bottom:12.0pt;line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-bottom:12.0pt;line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>パラメータ記述子は、複数選択で大括弧<span
+lang=EN-US>: {}を使わない限り、四角い括弧: []で囲まれます。四角い括弧の中は、記述子タイプに続けて、任意のデフォルト値が入ります。デフォルト値が記述されていると、HDR
+Shopはそのオプションの生成されたユーザー・インターフェースをその値に（初期値として）セットします。利用可能なパラメータ記述子のタイプは以下の通りです：<o:p></o:p></span></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='mso-cellspacing:0mm;
+ mso-padding-alt:0mm 5.4pt 0mm 5.4pt'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Type<o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"ＭＳ Ｐゴシック"'>タイプ</span></b><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Descriptor<o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"ＭＳ Ｐゴシック"'>記述子</span></b><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Default<o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"ＭＳ Ｐゴシック"'>デフォルト</span></b><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Example
+  (identifier + descriptor)<o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"ＭＳ Ｐゴシック"'>例（識別子＋記述子）</span></b><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Notes<o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"ＭＳ Ｐゴシック"'>注意</span></b><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>boolean<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>false<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/downsample<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>このオプションがコマンドラインで示されると、値は<span
+  lang=EN-US>true、そうでなければfalse<o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>integer<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[integer=X],[int=X]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>--iterations=[int=6]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>string<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[string=X],[str=X]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/greeting:[string=Hello
+  World!]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>float<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[float=X]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/pi=[float]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>全ての場合において、もしユーザーがオプションとして値を記述しないなら、そのオプションはコマンドライン引数として渡されない<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>input<br>
+  filename<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[inputfilename=X]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/C:[inputfilename=my
+  default.cfg]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>プラグインが読むファイルを指定<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>output<br>
+  filename<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[outputfilename=X]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/debugout=[outputfilename=debug.txt]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>プラグインが書き込むファイルを指定<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>rectangle<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>[selection]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-family:"ＭＳ Ｐゴシック"'>注意を参照<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>/s[selection]<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>このオプションのユーザー・インターフェースはチェックボックスで、デフォルトでチェックされています。<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>チェックされたとき、<span
+  lang=EN-US>HDRShop 内で現在選択されている画像範囲がプラグインに送られます。フォーマットは：100,100,200,200<o:p></o:p></span></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>（上、左、下、右）<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>選択されない場合、全体の画像サイズが戻ってきます。<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>multiple<br>
+  choice<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>{String1|String2|...|StringN}<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>String1<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>--algorithm:{|fast|accurate|weird}
+  <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>与えられた文字列リストからの複数選択。<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>1番目の値はデフォルトです。</span><span
+  lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>ユーザーによってプラグインが選択されると、<span
+lang=EN-US>HDR Shopは “sample_plugin &#8211;help”を実行し、結果のテキストを解析します。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDR
+Shopは次に、ユーザーが全てのプラグイン・オプションの値を入力可能なダイアログ・ボックスを作成します。ユーザーがオプションを選択し、 “Execute”がクリックされると、HDRShop
+はプラグインを再度呼び出し、今度はパッケージ化された全てのオプションを、コマンドライン引数として送ります。オプションは、上述したフォーマットでプラグインに渡されます。例えば、ユーザーが&quot;Blur
+Variance&quot; の値として１５を選択すると、HDR Shopはコマンドライン引数/V:15を渡します。そして、ユーザーが
+&quot;Downsample&quot; オプションを選択すると、HDRShop は引数/D を渡し、そうでなければ引数は渡しません。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>画像を操作するプラグインに対して、<span
+lang=EN-US>HDRShop は .pfm ファイルとしてその画像を渡します。これらのファイルをどのように計算するかは、下記の詳細を参照してください。HDR
+Shopは現行の画像を、一時的な“.pfm”ファイルに記述し、それをプラグインに渡します。プラグインがHDR Shopに画像を返すと想定されるときは、HDR
+Shopはプラグインがその“.pfm”ファイルを保存するよう、一時ファイルの名前を指定します。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>それでは、プラグインの実際のソース・コードを調べてみましょう。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<pre style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>int main(int argc, char *argv[])<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>{<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>char *inputfilename = 0;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>char *outputfilename = 0;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int downsample = 0;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int variance = 10;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (argc == 1)<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>printHelp();<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>exit(0);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (x = 1; x &lt; argc; x++) {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (argv[x][0] == '-') {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (argv[x][1] == '-') {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (strncmp(&quot;help&quot;, &amp;argv[x][2], 4) == 0) {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>printHelp();<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>exit(0);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else if (argv[x][0] == '/') {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>switch(argv[x][1]) {<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case '?':<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>printHelp();<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>exit(0);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>break;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case 'V':<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>variance = atoi(argv[x]+3);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>break;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case 'D':<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>downsample = 1;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>break;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else<span style="mso-spacerun: yes">&nbsp; </span>{<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (inputfilename == 0) <o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>inputfilename = argv[x];<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else <o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>outputfilename = argv[x];<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span></pre>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>このセクションでは、コマンドライン引数を分析しています。プログラムが<span
+lang=EN-US> &quot;/?&quot; または &quot;--help&quot; を通過すると、上に詳述したメッセージを stderr にプリントしてプログラムを終了する
+printHelp()が呼び出されます。そうでなければ、プログラムはコマンドライン・オプションを指示するために、 “/（スラッシュ）”を探します。オプションが
+“?”の場合、 “help”メッセージがプリントされます。オプションが“V”の場合は、variance(分散)の整数の値を求めて文字列の残りの箇所を通過します。オプションが“D”の場合は、
+“downsample”フラグをtrueにセットします。最後に、コマンドライン引数がオプションではない場合、それは入力ファイル名として認識されます。もし、入力ファイル名がすでに認識されていたら、それは出力ファイル名として認識されます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+
+<pre style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (!inputfilename)<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>doError(1);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (!outputfilename)<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>doError(2);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>floatimage fimg;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (!fimg.LoadPFM(inputfilename))<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>doError(3);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>fimg.fast_gaussian_blur(variance);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (downsample)<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>fimg.halfsize();<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (!fimg.SavePFM(outputfilename))<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>doError(4);<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;<o:p></o:p></span></pre><pre
+style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"ＭＳ Ｐゴシック"'>}<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>ファンクション<span
+lang=EN-US>“doError()”はStdErrにエラーの文字列をプリントします。そして、HDR Shopに対し、エラーが生じたことを示すため、ゼロで無い値とともに
+“exit()”を呼び出します。HDR Shopは、ユーザーに対し、Stderrに出力された全てをエラーメッセージとして表示します。 “floatimage”クラスは、ユーティリティのクラスです。このクラスは、多様なフォーマットからなるファイルの入出力や、アンチエイリアスのピクセル読み込み、ぼかし、畳み込み(convolution)、その他のユーティリティなど、数多くの便利な機能を提供します。“floatimage”の全ソースコードと、サンプル・プラグインは、<span
+style='color:#333399'><a
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/plugin.zip"><span
+style='color:#333399'>ここからダウンロード</span></a></span>できます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";
+color:#333399'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>プラグインが実行可能ファイルとしてコンパイルできたら、<span
+lang=EN-US>HDRShop の実行ファイルが存在するディレクトリのサブディレクトリ &quot;plugins&quot; に配置しなければいけません。プラグイン名は、HDR
+Shopのメニューバー “plugins”のプルダウンメニューに表示されるでしょう。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";mso-font-kerning:
+0pt'><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック";mso-font-kerning:0pt'><a href="index.html">「参考：HDRShopの日本語訳」に戻る</a>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US>&nbsp;</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

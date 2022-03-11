@@ -1,0 +1,663 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html --><HTML 
+xmlns="http://www.w3.org/TR/REC-html40" xmlns:v = 
+"urn:schemas-microsoft-com:vml" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:w = 
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>Creating a Light Probe</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content=Word.Document name=ProgId>
+<META content="MSHTML 6.00.2900.2523" name=GENERATOR>
+<META content="Microsoft Word 10" name=Originator><LINK 
+href="CreateLightProbe_1_0.files/filelist.xml" rel=File-List><LINK 
+href="CreateLightProbe_1_0.files/editdata.mso" rel=Edit-Time-Data><!--[if !mso]>
+<STYLE>v\:* {
+	BEHAVIOR: url(#default#VML)
+}
+o\:* {
+	BEHAVIOR: url(#default#VML)
+}
+w\:* {
+	BEHAVIOR: url(#default#VML)
+}
+.shape {
+	BEHAVIOR: url(#default#VML)
+}
+</STYLE>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>&#23567;&#26519;&#24076;&#19968;</o:Author>
+  <o:LastAuthor> </o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>314</o:TotalTime>
+  <o:Created>2004-11-12T16:00:00Z</o:Created>
+  <o:LastSaved>2004-11-12T16:00:00Z</o:LastSaved>
+  <o:Pages>9</o:Pages>
+  <o:Words>2284</o:Words>
+  <o:Characters>13025</o:Characters>
+  <o:Company>NHK-ES</o:Company>
+  <o:Lines>108</o:Lines>
+  <o:Paragraphs>30</o:Paragraphs>
+  <o:CharactersWithSpaces>15279</o:CharactersWithSpaces>
+  <o:Version>10.4219</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<STYLE>@font-face {
+	font-family: MS Mincho;
+}
+@font-face {
+	font-family: Century;
+}
+@font-face {
+	font-family: MS PGothic;
+}
+@font-face {
+	font-family: MS Mincho;
+}
+@font-face {
+	font-family: MS PGothic;
+}
+@page  {mso-page-border-surround-header: no; mso-page-border-surround-footer: no; }
+@page Section1 {size: 595.3pt 841.9pt; margin: 99.25pt 30.0mm 30.0mm 30.0mm; mso-header-margin: 42.55pt; mso-footer-margin: 49.6pt; mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "MS Mincho"
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "MS Mincho"
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "MS Mincho"
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; MARGIN-LEFT: 0mm; MARGIN-RIGHT: 0mm; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-fareast-font-family: "MS Mincho"; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-outline-level: 2
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13.5pt; MARGIN-LEFT: 0mm; MARGIN-RIGHT: 0mm; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-fareast-font-family: "MS Mincho"; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-outline-level: 3
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlink {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+A:visited {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlinkFollowed {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+P {
+	FONT-SIZE: 12pt; MARGIN-LEFT: 0mm; MARGIN-RIGHT: 0mm; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto
+}
+SPAN.SpellE {
+	mso-style-name: ""; mso-spl-e: yes
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0mm
+}
+UL {
+	MARGIN-BOTTOM: 0mm
+}
+</STYLE>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:\6A19\6E96\306E\8868;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026">
+  <v:textbox inset="5.85pt,.7pt,5.85pt,.7pt"/>
+  <o:colormenu v:ext="edit" fillcolor="none"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></HEAD>
+<BODY lang=JA style="tab-interval: 42.0pt" vLink=blue link=blue>
+<DIV class=Section1>
+<H2><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Creating a Light Probe 
+<o:p></o:p></SPAN></H2>
+<H2><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Light 
+Probe&#12398;&#20316;&#25104;<o:p></o:p></SPAN></H2>
+<P class=MsoNormal><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">A light probe is an 
+omni-directional (360° panoramic) high-dynamic range image. Because they 'see' 
+in all directions and can record actual light levels, light probes are useful 
+for providing measurements of the incident illumination. As such they can be 
+used to provide interesting and realistic lighting environments and backgrounds 
+for rendered graphics.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">“<SPAN lang=EN-US>Light 
+Probe”&#12392;&#12399;&#12289;&#20840;&#26041;&#20301;&#65288;360°&#12497;&#12494;&#12521;&#12510;&#65289;&#12398;&#12289;HDRI (high-dynamic range image)&#12398;&#12371;&#12392;&#12391;&#12377;&#12290;Light 
+probe&#12391;&#12399;&#20840;&#12390;&#12398;&#26041;&#35282;&#12434;&#35211;&#28193;&#12377;&#12371;&#12392;&#12364;&#12391;&#12365;&#12289;&#12414;&#12383;&#23455;&#38555;&#12398;&#20809;&#28304;&#12524;&#12505;&#12523;&#12434;&#35352;&#37682;&#12391;&#12365;&#12427;&#12398;&#12391;&#12289;&#20837;&#23556;&#29031;&#26126;&#12398;&#28204;&#23450;&#12395;&#24441;&#31435;&#12385;&#12414;&#12377;&#12290;&#12371;&#12398;&#12383;&#12417;&#12289;&#12524;&#12531;&#12480;&#12522;&#12531;&#12464;&#12373;&#12428;&#12383;&#30011;&#20687;&#12395;&#12289;&#29694;&#23455;&#30340;&#12394;&#29031;&#26126;&#29872;&#22659;&#12420;&#32972;&#26223;&#20809;&#12434;&#25552;&#20379;&#12377;&#12427;&#12371;&#12392;&#12364;&#21487;&#33021;&#12391;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">This tutorial describes 
+how to create a light probe using <SPAN class=SpellE>HDRShop</SPAN>. In general, 
+this involves the following steps: <o:p></o:p></SPAN></P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">First, we <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part1">take 
+  photos</A> of a mirrored ball. <o:p></o:p></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Then, we <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part2">crop 
+  the images</A> to the edges of the ball, <o:p></o:p></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">and <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part3">identify 
+  corresponding points</A>. <o:p></o:p></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">This allows us to <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part4">unwarp 
+  and rotate</A> the images to match each other. <o:p></o:p></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Finally, we <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part5">merge</A> 
+  them, <o:p></o:p></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  lang=EN-US style="FONT-FAMILY: 'MS PGothic'">giving us the <A 
+  href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial5.html#part6">resulting 
+  light probe</A>. <o:p></o:p></SPAN></LI></UL>
+<P class=MsoNormal 
+style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12398;&#12481;&#12517;&#12540;&#12488;&#12522;&#12450;&#12523;&#12391;&#12399;&#12289;<SPAN lang=EN-US>HDR Shop&#12434;&#20351;&#12387;&#12383;light 
+probe&#12398;&#20316;&#25104;&#26041;&#27861;&#12434;&#32057;&#20171;&#12375;&#12414;&#12377;&#12290;&#20840;&#33324;&#30340;&#12395;&#12289;&#20197;&#19979;&#12398;&#12424;&#12358;&#12394;&#12473;&#12486;&#12483;&#12503;&#12434;&#36367;&#12435;&#12391;&#12356;&#12365;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#12399;&#12376;&#12417;&#12395;&#12289;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#20889;&#30495;&#12434;&#25774;&#24433;&#12375;&#12414;&#12377;&#12290; <SPAN 
+  lang=EN-US><o:p></o:p></SPAN></SPAN>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#27425;&#12395;&#12289;&#12508;&#12540;&#12523;&#12398;&#32257;&#12398;&#30011;&#20687;&#12434;&#20999;&#12426;&#25244;&#12365;&#12414;&#12377;&#12290;<SPAN 
+  lang=EN-US><o:p></o:p></SPAN></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#12381;&#12375;&#12390;&#12289;&#23550;&#24540;&#28857;<SPAN lang=EN-US> (corresponding 
+  points)&#12434;&#29305;&#23450;&#12375;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12428;&#12395;&#12424;&#12387;&#12390;&#12289;&#21508;&#30011;&#20687;&#12434;&#19968;&#33268;&#12373;&#12379;&#12427;&#12383;&#12417;&#12398;<SPAN lang=EN-US><SPAN 
+  style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+  class=SpellE>unwarp</SPAN>&#12420;rotate&#27231;&#33021;&#12364;&#20351;&#12360;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#26368;&#24460;&#12395;&#12289;&#20840;&#12390;&#12398;&#30011;&#20687;&#12434;&#12510;&#12540;&#12472;&#12375;&#12414;&#12377;&#12290;<SPAN 
+  lang=EN-US><o:p></o:p></SPAN></SPAN> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt"><SPAN 
+  style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12428;&#12391;&#12289;<SPAN lang=EN-US>light probe&#12398;&#20316;&#25104;&#12364;&#23436;&#20102;&#12375;&#12414;&#12377;&#12290; 
+  <A name=part1><o:p></o:p></A></SPAN></SPAN></LI></UL>
+<H3><SPAN style="mso-bookmark: part1"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Step 1) Take the 
+Photos<o:p></o:p></SPAN></SPAN></H3>
+<H3><SPAN style="mso-bookmark: part1"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12473;&#12486;&#12483;&#12503;&#65297;&#65306;&#20889;&#30495;&#12398;&#25774;&#24433;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></SPAN></H3><SPAN 
+style="mso-bookmark: part1"></SPAN>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">One method of obtaining a 
+light probe is to <A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/tutorial3.html">take a 
+high-dynamic range image</A> of a mirrored sphere, such as the <A 
+href="http://www.mcmaster.com/catalog/109/html/3366.html">Precision Grade Chrome 
+Steel Balls</A> at <A href="http://www.mcmaster.com/">McMaster-Carr</A>. 
+Assuming your camera is orthogonal, then in theory a single photograph of the 
+mirrored ball can 'see' in all directions. That is, anything visible from the 
+viewpoint of the mirrored ball will be visible to the camera as a reflection in 
+the ball.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#36969;&#20999;&#12394;<SPAN lang=EN-US>light 
+probe&#30011;&#20687;&#12434;&#24471;&#12427;&#26041;&#27861;&#12392;&#12375;&#12390;&#12399;&#12289;<A href="http://www.mcmaster.com/">McMaster-Carr</A>&#31038;&#12398;<A 
+href="http://www.mcmaster.com/catalog/109/html/3366.html">Precision Grade Chrome 
+Steel Balls</A>&#12398;&#12424;&#12358;&#12394;&#12511;&#12521;&#12540;&#12467;&#12540;&#12486;&#12451;&#12531;&#12464;&#12373;&#12428;&#12383;&#29699;&#20307; (mirrored 
+sphere)&#12398;&#20351;&#29992;&#12364;&#25369;&#12370;&#12425;&#12428;&#12414;&#12377;&#12290;&#25163;&#20803;&#12395;&#12354;&#12427;&#12459;&#12513;&#12521;&#12364;&#30452;&#20132;&#22411;(orthogonal)&#12392;&#20206;&#23450;&#12377;&#12427;&#12392;&#12289;&#29702;&#35542;&#30340;&#12395;&#12399;&#65297;&#26522;&#12398;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#20889;&#30495;&#12391;&#12289;&#20840;&#12390;&#12398;&#26041;&#35282;&#12434;&#12300;&#35211;&#12427;&#12301;&#12371;&#12392;&#12364;&#12391;&#12365;&#12427;&#12392;&#12356;&#12360;&#12414;&#12377;&#12290;&#12388;&#12414;&#12426;&#12289;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#20596;&#12363;&#12425;&#35211;&#12360;&#12427;&#12354;&#12425;&#12422;&#12427;&#29289;&#12399;&#12289;&#12508;&#12540;&#12523;&#12395;&#37857;&#26144;&#12373;&#12428;&#12427;&#12398;&#12391;&#12289;&#12459;&#12513;&#12521;&#20596;&#12391;&#35211;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12427;&#12392;&#12356;&#12360;&#12427;&#12391;&#12375;&#12423;&#12358;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Unfortunately, things that 
+are reflected near the edge of the ball will become extremely stretched and 
+distorted, giving a poor image when it is <SPAN class=SpellE>unwarped</SPAN>. 
+Additionally, in the center of the ball will be a reflection of the camera used 
+to take the photograph, which will obscure some of the 
+background.<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#27531;&#24565;&#12394;&#12364;&#12425;&#12289;&#12508;&#12540;&#12523;&#12398;&#32257;&#12395;&#37857;&#26144;&#12373;&#12428;&#12383;&#29289;&#12399;&#12289;&#26997;&#31471;&#12395;&#20280;&#12403;&#12383;&#12426;&#12289;&#27498;&#12435;&#12384;&#12426;&#12375;&#12390;&#12375;&#12414;&#12358;&#12383;&#12417;&#12289;<SPAN 
+class=SpellE><SPAN 
+lang=EN-US>unwarp</SPAN></SPAN>&#12375;&#12383;&#38555;&#12395;&#36074;&#12398;&#24746;&#12356;&#30011;&#20687;&#12392;&#12394;&#12387;&#12390;&#12375;&#12414;&#12356;&#12414;&#12377;&#12290;&#12373;&#12425;&#12395;&#12289;&#12508;&#12540;&#12523;&#12398;&#20013;&#24515;&#12391;&#12399;&#12289;&#25774;&#24433;&#12395;&#20351;&#12431;&#12428;&#12383;&#12459;&#12513;&#12521;&#12364;&#21453;&#23556;&#12377;&#12427;&#12383;&#12417;&#12289;&#32972;&#26223;&#12364;&#19981;&#26126;&#30637;&#12395;&#12394;&#12427;&#12391;&#12375;&#12423;&#12358;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">To alleviate these 
+problems, we can take two pictures of the mirrored sphere from different angles 
+and blend them together to remove the camera and the regions of poor 
+sampling.<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12358;&#12375;&#12383;&#21839;&#38988;&#28857;&#12434;&#36605;&#28187;&#12377;&#12427;&#12383;&#12417;&#12395;&#12399;&#12289;&#29699;&#20307;&#12398;&#30064;&#12394;&#12427;&#35282;&#24230;&#12363;&#12425;&#65298;&#26522;&#12398;&#20889;&#30495;&#12434;&#25774;&#12426;&#12289;&#12381;&#12428;&#12425;&#12434;&#12502;&#12524;&#12531;&#12489;&#12377;&#12427;&#12371;&#12392;&#12391;&#12289;&#31895;&#26411;&#12394;&#37096;&#20998;&#12434;&#21462;&#12426;&#38500;&#12367;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Since the two 'bad' spots 
+in the mirrored ball are directly towards the camera, and directly away from the 
+camera, the two pictures should be taken from positions 90° apart from each 
+other (see figure 1). This way the regions of bad sampling and camera 
+interference will be in different locations in the two images. (Note that taking 
+the images from opposite sides of the ball will not work, as the region of bad 
+sampling in one image will be the location of the camera in the other image, and 
+vice versa.)<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#19978;&#12391;&#36848;&#12409;&#12383;&#12424;&#12358;&#12394;&#12289;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12395;&#12362;&#12369;&#12427;&#21839;&#38988;&#12398;&#65298;&#31623;&#25152;&#12399;&#12289;&#12459;&#12513;&#12521;&#12395;&#30452;&#25509;&#21521;&#12363;&#12387;&#12390;&#12356;&#12427;&#28857;&#65288;&#35379;&#27880;&#65306;&#21453;&#23556;&#12377;&#12427;&#37096;&#20998;&#65289;&#12392;&#12289;&#12459;&#12513;&#12521;&#12363;&#12425;&#38626;&#12428;&#12390;&#12356;&#12427;&#37096;&#20998;&#65288;&#35379;&#27880;&#65306;&#29699;&#20307;&#12398;&#31471;&#65289;&#12398;&#12383;&#12417;&#12289;&#65298;&#26522;&#12398;&#20889;&#30495;&#12399;&#12381;&#12428;&#12382;&#12428;&#12363;&#12425;<SPAN 
+lang=EN-US>90°&#38626;&#12428;&#12383;&#20301;&#32622;&#12363;&#12425;&#25774;&#24433;&#12373;&#12428;&#12427;&#12409;&#12365;&#12391;&#12377;&#65288;&#22259;&#12434;&#21442;&#29031;&#65289;&#12290;&#12371;&#12398;&#26041;&#27861;&#12391;&#12399;&#12289;&#19981;&#36969;&#20999;&#12394;&#12469;&#12531;&#12503;&#12522;&#12531;&#12464;&#12398;&#38936;&#22495;&#12392;&#12289;&#12459;&#12513;&#12521;&#12364;&#22952;&#23475;&#12375;&#12390;&#12356;&#12427;&#37096;&#20998;&#12399;&#12289;&#65298;&#12388;&#12398;&#30011;&#20687;&#19978;&#12391;&#12399;&#30064;&#12394;&#12427;&#31623;&#25152;&#12395;&#20301;&#32622;&#12377;&#12427;&#12371;&#12392;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;&#65288;&#12508;&#12540;&#12523;&#12398;&#21453;&#23550;&#20596;&#12363;&#12425;&#12398;&#25774;&#24433;&#12399;&#12289;&#29255;&#26041;&#12398;&#30011;&#20687;&#12398;&#19981;&#36969;&#20999;&#12394;&#12469;&#12531;&#12503;&#12522;&#12531;&#12464;&#38936;&#22495;&#12392;&#12289;&#12418;&#12358;&#65297;&#26522;&#12398;&#30011;&#20687;&#12395;&#12362;&#12369;&#12427;&#12459;&#12513;&#12521;&#12398;&#20301;&#32622;&#12392;&#21516;&#12376;&#12395;&#12394;&#12387;&#12390;&#12375;&#12414;&#12358;&#12383;&#12417;&#12289;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12392;&#12356;&#12358;&#12371;&#12392;&#12395;&#27880;&#24847;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#36870;&#12418;&#12414;&#12383;&#28982;&#12426;&#65289;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">You should have a pair of 
+images that look something like this (in high-dynamic range): 
+<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#20197;&#19979;&#12398;&#12424;&#12358;&#12394;&#12289;&#23550;&#12398;<SPAN 
+lang=EN-US>(HDR&#12398;)&#30011;&#20687;&#12434;&#20837;&#25163;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65306;<o:p></o:p></SPAN></SPAN></P>
+<TABLE class=MsoNormalTable 
+style="mso-cellspacing: 1.5pt; mso-padding-alt: 0mm 0mm 0mm 0mm" cellPadding=0 
+border=0>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-lastrow: yes">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><A 
+      href="CreateLightProbe_1_0.files/graceA.jpg"><SPAN 
+      style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1025 
+      height=266 src="CreateLightProbe_1_0.files/graceA.jpg" width=400 
+      border=0></SPAN></A><o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><A 
+      href="CreateLightProbe_1_0.files/graceB.jpg"><SPAN 
+      style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1026 
+      height=266 src="CreateLightProbe_1_0.files/graceB.jpg" width=400 
+      border=0></SPAN></A><o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">If you wish to use our 
+example images, you can download them here: <A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceA.hdr">graceA.hdr</A>, 
+<A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceB.hdr">graceB.hdr</A><o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12469;&#12531;&#12503;&#12523;&#30011;&#20687;&#12364;&#24517;&#35201;&#12394;&#22580;&#21512;&#12289;&#27425;&#12398;&#12469;&#12452;&#12488;&#12363;&#12425;&#21462;&#24471;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#65306;<SPAN 
+lang=EN-US><A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceA.hdr">graceA.hdr</A>, 
+<A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceB.hdr">graceB.hdr</A><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><BR>A note to the advanced 
+light <SPAN class=SpellE>prober</SPAN>: it is OK for the camera to crop the top 
+and the bottom of the mirrored ball a bit; these directions are recoverable from 
+the other photograph. <o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#19978;&#32026;&#32773;&#12398;&#26041;&#12408;&#65306;&#12288;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#19978;&#19979;&#12398;&#37096;&#20998;&#12434;&#12289;&#23569;&#12375;&#20999;&#12426;&#25244;&#12356;&#12390;&#25774;&#24433;&#12375;&#12390;&#12418;&#22823;&#19976;&#22827;&#12391;&#12377;&#12290;&#12371;&#12428;&#12425;&#12398;&#31623;&#25152;&#12399;&#12289;&#20182;&#12398;&#20889;&#30495;&#12363;&#12425;&#24489;&#20803;&#12377;&#12427;&#12371;&#12392;&#12364;&#21487;&#33021;&#12391;&#12377;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN class=SpellE><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">HDRShop</SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"> can then be used to warp these images to a 
+better panoramic format, and rotate them in 3D so that their orientation 
+matches.<o:p></o:p></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">HDR 
+Shop&#12391;&#12399;&#12289;&#30011;&#20687;&#12434;&#12424;&#12426;&#33391;&#12356;&#12497;&#12494;&#12521;&#12510;&#12539;&#12501;&#12457;&#12540;&#12510;&#12483;&#12488;&#12395;&#12377;&#12427;&#12383;&#12417;&#12398;warp&#27231;&#33021;&#12398;&#20351;&#29992;&#12420;&#12289;&#26041;&#20301;&#12434;&#21512;&#12431;&#12379;&#12427;&#12383;&#12417;&#12395;3D&#12395;rotate&#12373;&#12379;&#12427;&#12383;&#12417;&#12395;&#29992;&#12356;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></P>
+<H3><A name=part2><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Step 2) 
+Crop the Images<o:p></o:p></SPAN></A></H3>
+<H3><SPAN style="mso-bookmark: part2"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12473;&#12486;&#12483;&#12503;&#65298;&#65306;&#12452;&#12513;&#12540;&#12472;&#12398;&#20999;&#12426;&#25244;&#12365;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></SPAN></H3><SPAN 
+style="mso-bookmark: part2"></SPAN>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">The next step is to crop 
+the images to the very edge of the mirrored ball:<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#27425;&#12398;&#12473;&#12486;&#12483;&#12503;&#12391;&#12399;&#12289;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#26368;&#31471;&#12414;&#12391;&#12289;&#12452;&#12513;&#12540;&#12472;&#12434;&#20999;&#12426;&#25244;&#12365;&#12414;&#12377;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">First make sure that the 
+"Circle" option is <I>checked</I>. This can be found in the <U>S</U>elect menu 
+under <U>D</U>raw Options. Checking this will draw an ellipse inscribed in your 
+selection rectangle, which can be useful for matching up the edge of the 
+mirrored ball with your selection.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12399;&#12376;&#12417;&#12395;&#12289; “<SPAN 
+lang=EN-US>Circle”&#12458;&#12503;&#12471;&#12519;&#12531;&#12364;<I>&#12481;&#12455;&#12483;&#12463;&#12373;&#12428;&#12390;&#12356;&#12427;&#12363;</I>&#30906;&#35469;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290; “Select”&#12513;&#12491;&#12517;&#12540;&#12363;&#12425;&#12289;“Draw 
+Options”&#12434;&#36984;&#25246;&#12377;&#12427;&#12371;&#12392;&#12391;&#35211;&#12388;&#12369;&#12425;&#12428;&#12414;&#12377;&#12290;“Circle”&#12458;&#12503;&#12471;&#12519;&#12531;&#12395;&#12481;&#12455;&#12483;&#12463;&#12434;&#20837;&#12428;&#12427;&#12371;&#12392;&#12391;&#12289;&#36984;&#25246;&#12373;&#12428;&#12383;&#38263;&#26041;&#24418;&#12398;&#26528;&#12395;&#20869;&#25509;&#12377;&#12427;&#26965;&#20870;&#12434;&#25551;&#12367;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;&#12371;&#12398;&#27231;&#33021;&#12399;&#12289;&#36984;&#25246;&#31684;&#22258;&#12392;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12398;&#31471;&#12434;&#19968;&#33268;&#12373;&#12379;&#12427;&#38555;&#12395;&#24441;&#31435;&#12385;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">If the mirrored ball goes 
+off some of the edges in your photograph, make sure that the "Restrict Selection 
+to Image" option is <I>unchecked</I>. This can be found in the <U>S</U>elect 
+menu under Select <U>O</U>ptions. <SPAN class=SpellE>Unchecking</SPAN> this will 
+allow the selection tool to select regions outside the bounds of the 
+image.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12418;&#12375;&#12289;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#12364;&#20889;&#30495;&#12398;&#31471;&#12398;&#26041;&#12408;&#31227;&#21205;&#12375;&#12390;&#12375;&#12414;&#12387;&#12390;&#12356;&#12383;&#12425;&#12289;“<SPAN 
+lang=EN-US>Restrict Selection to 
+Image”&#12458;&#12503;&#12471;&#12519;&#12531;&#12364;<I>&#12481;&#12455;&#12483;&#12463;&#12364;&#12373;&#12428;&#12390;&#12356;&#12394;&#12356;</I>&#12371;&#12392;&#12434;&#30906;&#35469;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#12371;&#12398;&#12458;&#12503;&#12471;&#12519;&#12531;&#12399;&#12289; 
+“Select”&#12513;&#12491;&#12517;&#12540;&#12363;&#12425;&#12289;“Options”&#12434;&#12383;&#12393;&#12427;&#12371;&#12392;&#12391;&#35211;&#12388;&#12363;&#12426;&#12414;&#12377;&#12290;&#12481;&#12455;&#12483;&#12463;&#12434;&#22806;&#12377;&#12371;&#12392;&#12391;&#12289;&#30011;&#20687;&#12398;&#22659;&#30028;&#12434;&#36234;&#12360;&#12383;&#38936;&#22495;&#12434;&#36984;&#25246;&#12377;&#12427;&#12371;&#12392;&#12364;&#21487;&#33021;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Select the region around 
+the mirrored ball, and adjust it until the circle borders the edge of the ball. 
+It should look something like the image below.<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#21608;&#22258;&#12398;&#38936;&#22495;&#12434;&#36984;&#25246;&#12375;&#12289;&#12508;&#12540;&#12523;&#12398;&#31471;&#12398;&#22659;&#30028;&#12398;&#36794;&#12426;&#12414;&#12391;&#20870;&#12434;&#35519;&#25972;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#20197;&#19979;&#12398;&#30011;&#20687;&#12398;&#12424;&#12358;&#12394;&#29366;&#24907;&#12364;&#26395;&#12414;&#12375;&#12356;&#12391;&#12377;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">When you have the circle 
+lined up, crop the image using the <U>C</U>rop command in the <U>I</U>mage 
+menu.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12398;&#20316;&#26989;&#12434;&#32066;&#12360;&#12383;&#12425;&#12289; “<SPAN 
+lang=EN-US>Image”&#12513;&#12491;&#12517;&#12540;&#12363;&#12425;&#12289;“Crop”&#12467;&#12510;&#12531;&#12489;&#12434;&#29992;&#12356;&#12390;&#30011;&#20687;&#12434;&#20999;&#12426;&#21462;&#12387;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceA_cropping.jpg"><SPAN 
+style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1027 
+height=298 src="CreateLightProbe_1_0.files/graceA_cropping_small.jpg" width=391 
+border=0></SPAN></A><o:p></o:p></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Once you have cropped 
+them, you should have two images that look like this: <o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#19968;&#26086;&#20999;&#12426;&#25244;&#12365;&#12364;&#12391;&#12365;&#12427;&#12392;&#12289;&#27425;&#12398;&#12424;&#12358;&#12394;&#65298;&#12388;&#12398;&#30011;&#20687;&#12364;&#12354;&#12425;&#12431;&#12428;&#12414;&#12377;&#12290;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<TABLE class=MsoNormalTable 
+style="mso-cellspacing: 1.5pt; mso-padding-alt: 0mm 0mm 0mm 0mm" cellPadding=0 
+border=0>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-lastrow: yes">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><A 
+      href="CreateLightProbe_1_0.files/graceA_cropped.jpg"><SPAN 
+      style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1028 
+      height=362 src="CreateLightProbe_1_0.files/graceA_cropped.jpg" width=400 
+      border=0></SPAN></A><o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><A 
+      href="CreateLightProbe_1_0.files/graceB_cropped.jpg"><SPAN 
+      style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1029 
+      height=363 src="CreateLightProbe_1_0.files/graceB_cropped.jpg" width=400 
+      border=0></SPAN></A><o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Now is a good time to save 
+(<U>F</U>ile, <U>S</U>ave As...). Make sure not to overwrite the 
+originals.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12371;&#12391;&#12289;&#20445;&#23384;&#12375;&#12390;&#12362;&#12365;&#12414;&#12375;&#12423;&#12358;&#12290;&#65288; “<SPAN 
+lang=EN-US>File”&#12363;&#12425;&#12289;“Save 
+As…”&#65289;&#12290;&#12458;&#12522;&#12472;&#12490;&#12523;&#12398;&#30011;&#20687;&#12434;&#19978;&#26360;&#12365;&#12375;&#12394;&#12356;&#12424;&#12358;&#12395;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<H3><A name=part3><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Step 3) 
+Identify Corresponding Points<o:p></o:p></SPAN></A></H3>
+<H3><SPAN style="mso-bookmark: part3"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12473;&#12486;&#12483;&#12503;&#65299;&#65306;&#23550;&#24540;&#28857;<SPAN lang=EN-US> (corresponding 
+points)&#12398;&#29305;&#23450;<o:p></o:p></SPAN></SPAN></SPAN></H3><SPAN 
+style="mso-bookmark: part3"></SPAN>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">In order to match the two 
+images, we will need to find the rotation between them. <SPAN 
+class=SpellE>HDRShop</SPAN> can do this semi-automatically, but you will need to 
+provide the coordinates of two points (corresponding to the same features in the 
+environment) in each mirrored ball image.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#65298;&#12388;&#12398;&#30011;&#20687;&#12434;&#19968;&#33268;&#12373;&#12379;&#12427;&#12383;&#12417;&#12395;&#12289;&#20001;&#32773;&#38291;&#12398;<SPAN 
+lang=EN-US>rotation&#12434;&#35211;&#12388;&#12369;&#12394;&#12369;&#12428;&#12400;&#12394;&#12426;&#12414;&#12379;&#12435;&#12290;HDR 
+Shop&#12399;&#12371;&#12398;&#20316;&#26989;&#12434;&#12411;&#12412;&#33258;&#21205;&#30340;&#12395;&#34892;&#12356;&#12414;&#12377;&#12364;&#12289;&#12381;&#12398;&#12383;&#12417;&#12395;&#12399;&#12381;&#12428;&#12382;&#12428;&#12398;&#12511;&#12521;&#12540;&#12539;&#12508;&#12540;&#12523;&#30011;&#20687;&#12395;&#12362;&#12369;&#12427;&#23550;&#24540;&#12377;&#12427;&#65298;&#28857;&#12398;&#24231;&#27161;&#65288;&#30011;&#20687;&#20869;&#12391;&#32080;&#12403;&#12388;&#12367;&#12289;&#21516;&#12376;&#29305;&#24500;&#65289;&#12434;HDR 
+Shop&#12395;&#30693;&#12425;&#12379;&#12427;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">The easiest way to get 
+these coordinates is to use the Point Editor, which is available under the 
+<U>W</U>indow menu (cancel out of the Panoramic Transform window if you have it 
+open). Once the Points window is open, Ctrl-clicking on an image will create a 
+new point. You can also drag existing points around. For our purposes, we will 
+need two points in each image, positioned on the same features. In our example 
+below, I've chosen the two light sources above either side of the 
+altar.<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12428;&#12425;&#12398;&#35519;&#25972;&#12398;&#12383;&#12417;&#12395;&#12399;&#12289;“<SPAN 
+lang=EN-US>Window”&#12513;&#12491;&#12517;&#12540;&#20197;&#19979;&#12398;&#12289;“Point 
+Editor”&#12434;&#21033;&#29992;&#12377;&#12427;&#12398;&#12364;&#26368;&#12418;&#31777;&#21336;&#12394;&#26041;&#27861;&#12391;&#12354;&#12427;&#12392;&#12356;&#12360;&#12414;&#12377;&#65288;&#12497;&#12494;&#12521;&#12510;&#22793;&#25563;&#12398;&#12454;&#12451;&#12531;&#12489;&#12454;&#12364;&#12414;&#12384;&#38283;&#12356;&#12390;&#12356;&#12383;&#12425;&#12289;&#32066;&#20102;&#12373;&#12379;&#12390;&#12367;&#12384;&#12373;&#12356;&#65289;&#12290;“Point 
+Editor”&#12454;&#12451;&#12531;&#12489;&#12454;&#12364;&#38283;&#12356;&#12383;&#12425;&#12289;Ctrl&#12461;&#12540;&#12392;&#12510;&#12454;&#12473;&#12463;&#12522;&#12483;&#12463;&#12434;&#34892;&#12358;&#12371;&#12392;&#12391;&#12289;&#30011;&#20687;&#19978;&#12395;&#26032;&#12375;&#12356;&#28857;(point)&#12434;&#20316;&#25104;&#12375;&#12414;&#12377;&#12290;&#12414;&#12383;&#12289;&#26082;&#23384;&#12398;&#28857;&#12434;&#12489;&#12521;&#12483;&#12464;&#12375;&#12390;&#21033;&#29992;&#12377;&#12427;&#12371;&#12392;&#12418;&#12391;&#12365;&#12414;&#12377;&#12290;&#20170;&#22238;&#12398;&#22580;&#21512;&#12399;&#12289;&#21508;&#12452;&#12513;&#12540;&#12472;&#12395;&#65298;&#12388;&#12378;&#12388;&#12398;&#12289;&#21516;&#31561;&#12398;&#29305;&#24500;&#12434;&#12418;&#12388;&#28857;(point)&#12364;&#24517;&#35201;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;&#19979;&#35352;&#12395;&#31034;&#12375;&#12383;&#20363;&#12391;&#12399;&#12289;&#19978;&#37096;&#12395;&#12354;&#12427;&#65298;&#12388;&#12398;&#20809;&#28304;&#12434;point&#12392;&#12375;&#12390;&#36984;&#25246;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'"><IMG 
+id=_x0000_i1030 height=639 src="CreateLightProbe_1_0.files/PointEditor.jpg" 
+width=537 border=0>&#65363;<o:p></o:p></SPAN></P>
+<P style="MARGIN-BOTTOM: 12pt"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">In the current public version of <SPAN 
+class=SpellE>HDRShop</SPAN>, you need to write these coordinates down. (Future 
+versions will allow you to use the points directly) In our example the 
+coordinates are:<o:p></o:p></SPAN></P>
+<P style="MARGIN-BOTTOM: 12pt"><SPAN style="FONT-FAMILY: 'MS PGothic'">&#29694;&#34892;&#12398;<SPAN 
+lang=EN-US>HDR 
+Shop&#12391;&#12399;&#12289;&#12371;&#12428;&#12425;&#12398;&#24231;&#27161;&#12434;&#26360;&#12365;&#30041;&#12417;&#12390;&#12362;&#12367;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#65288;&#23558;&#26469;&#30340;&#12395;&#12399;&#12289;&#30452;&#25509;&#12289;point&#12434;&#20351;&#12360;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12377;&#65289;&#12290;&#20170;&#22238;&#12398;&#20363;&#12395;&#12362;&#12369;&#12427;&#24231;&#27161;&#12399;&#20197;&#19979;&#12398;&#36890;&#12426;&#12391;&#12377;&#65306;<o:p></o:p></SPAN></SPAN></P>
+<TABLE class=MsoNormalTable 
+style="mso-cellspacing: 1.5pt; mso-padding-alt: 0mm 0mm 0mm 0mm" cellPadding=0 
+border=0>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">X<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">Y<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">Image 
+      A:&nbsp;&nbsp;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">93.18750<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">140.93750<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">236.18750<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">198.06250<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">Image B:<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">233.87500<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">186.12500<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 4; mso-yfti-lastrow: yes">
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">417.43750<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; PADDING-BOTTOM: 0.75pt; PADDING-TOP: 0.75pt">
+      <P class=MsoNormal><SPAN lang=EN-US 
+      style="FONT-FAMILY: 'MS PGothic'">187.56250<o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE>
+<P><A name=part4><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></A></P>
+<H3><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Step 4) <SPAN class=SpellE>Unwarp</SPAN> and 
+Rotate<o:p></o:p></SPAN></SPAN></H3>
+<H3><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12473;&#12486;&#12483;&#12503;&#65300;&#65306;<SPAN class=SpellE><SPAN 
+lang=EN-US>Unwarp</SPAN></SPAN>&#12392;<SPAN 
+lang=EN-US>Rotate<o:p></o:p></SPAN></SPAN></SPAN></H3>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Now we can have <SPAN 
+class=SpellE>HDRShop</SPAN> apply a 3D rotation to one of the panoramas in order 
+to line it up to the other one, while simultaneously warping the images to the 
+light probe (angular map) panoramic format. <o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12428;&#12391;&#12289;&#30011;&#20687;&#12434;<SPAN lang=EN-US>light probe 
+(&#12450;&#12531;&#12462;&#12517;&#12521;&#12539;&#12510;&#12483;&#12503;:angular map)&#12497;&#12494;&#12521;&#12510;&#12539;&#12501;&#12457;&#12540;&#12510;&#12483;&#12488;&#12395;warp&#12377;&#12427;&#12398;&#12392;&#21516;&#26178;&#12395;&#12289;&#12497;&#12494;&#12521;&#12510;&#22793;&#25563;&#12364;&#21487;&#33021;&#12394;&#65299;D&#12514;&#12487;&#12523;&#12398;Rotation 
+&#12364;&#36969;&#29992;&#12373;&#12428;&#12427;<SPAN 
+class=SpellE>HDRShop</SPAN>&#12398;&#28310;&#20633;&#12364;&#12391;&#12365;&#12414;&#12375;&#12383;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">To do this we will use the Panoramic Transform 
+command. It can be found on the <U>I</U>mage menu, under <U>P</U>anorama, 
+<U>P</U>anoramic Transformations...<o:p></o:p></SPAN></SPAN></P>
+<P style="LINE-HEIGHT: 200%"><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12497;&#12494;&#12521;&#12510;&#22793;&#25563;&#12467;&#12510;&#12531;&#12489;&#12434;&#29992;&#12356;&#12414;&#12377;&#12290; “<SPAN 
+lang=EN-US>Image”&#12513;&#12491;&#12517;&#12540;&#19979;&#12398;“Panorama”&#12363;&#12425;&#12289; “Panoramic 
+Transformations…”&#12434;&#36984;&#12403;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"><IMG id=_x0000_i1031 height=352 
+src="CreateLightProbe_1_0.files/PanoramicTransformDlg.jpg" width=558 
+border=0><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">The source image should be the image you wish 
+to <SPAN class=SpellE>unwarp</SPAN>. The destination image can be left as 'New 
+Image'. Our source image format is 'mirrored ball', and we wish our destination 
+image to be in 'Light Probe (Angular Map)' format. You can change the 
+destination image resolution to the desired size, and increase the <SPAN 
+class=SpellE>supersampling</SPAN> if you want a better quality result. 
+<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">“<SPAN lang=EN-US>Source Image”&#12399;&#12289;<SPAN 
+class=SpellE>unwarp</SPAN>&#12375;&#12383;&#12356;&#30011;&#20687;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;“Destination Image”&#12399;&#12289;“New 
+Image”&#12398;&#12414;&#12414;&#12391;&#12424;&#12356;&#12391;&#12377;&#12290;“Source Image”&#12398;“Format”&#12399;“Mirrored Ball”&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;&#12414;&#12383;&#12289;“Destination 
+Image”&#12398;“Format”&#12399;&#12289;“Light Probe (Angular Map) Format”&#12392;&#12394;&#12426;&#12414;&#12377;&#12290;“Destination 
+Image”&#12398;&#35299;&#20687;&#24230;&#12399;&#22793;&#26356;&#12377;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;&#12414;&#12383;&#12289;&#12424;&#12426;&#12424;&#12356;&#21697;&#36074;&#12398;&#30011;&#20687;&#12434;&#26395;&#12416;&#12398;&#12391;&#12354;&#12428;&#12400;&#12289;“<SPAN 
+class=SpellE>Supersample</SPAN>”&#12398;&#20516;&#12434;&#22679;&#21152;&#12375;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"><o:p>&nbsp;</o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">In this case, we will warp image B with no 
+rotation, and then warp and rotate image A to match image B. So we choose image 
+B as our source image, select 'None' for 3D Rotation, and click OK. This should 
+produce a warped version of image B. <o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#20170;&#22238;&#12399;&#12289;&#30011;&#20687;<SPAN 
+lang=EN-US>B&#12434;rotation&#28961;&#12375;&#12391;warp&#12373;&#12379;&#12289;&#30011;&#20687;B&#12395;&#23550;&#12375;&#12390;&#30011;&#20687;A&#12364;&#19968;&#33268;&#12377;&#12427;&#12424;&#12358;&#12395;&#12289;&#30011;&#20687;A&#12434;rotate&#12375;&#12289;warp&#12373;&#12379;&#12414;&#12377;&#12290;&#12371;&#12398;&#12383;&#12417;&#12289;&#30011;&#20687;B&#12434;“Source 
+Image”&#12392;&#12375;&#12390;&#36984;&#25246;&#12375;&#12414;&#12377;&#12290;“3D 
+Rotation”&#12391;&#12399;“None”&#12434;&#36984;&#25246;&#12375;&#12289;“OK”&#12508;&#12479;&#12531;&#12434;&#12463;&#12522;&#12483;&#12463;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#12371;&#12428;&#12395;&#12424;&#12387;&#12390;&#12289;warp&#12375;&#12383;&#12496;&#12540;&#12472;&#12519;&#12531;&#12398;&#30011;&#20687;B&#12364;&#29983;&#25104;&#12373;&#12428;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Now, going back to the Panoramic Transform 
+dialog, we can set everything up again for image A. This time, select 'Match 
+Points' under '3D Rotation'. <o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12371;&#12391;&#12289;&#12497;&#12494;&#12521;&#12510;&#22793;&#25563;&#12480;&#12452;&#12450;&#12525;&#12464;&#12395;&#25147;&#12426;&#12414;&#12377;&#12290;&#30011;&#20687;<SPAN 
+lang=EN-US>A&#12395;&#23550;&#12375;&#12390;&#12418;&#12289;&#20808;&#12411;&#12393;&#12392;&#21516;&#27096;&#12398;&#20316;&#26989;&#12434;&#34892;&#12356;&#12414;&#12377;&#12290;&#20170;&#22238;&#12399;“3D Rotation”&#20197;&#19979;&#12363;&#12425;&#12289;“Match 
+Points”&#12434;&#36984;&#25246;&#12375;&#12414;&#12377;&#12290;<BR><IMG id=_x0000_i1032 height=352 
+src="CreateLightProbe_1_0.files/PanoramicTransformDlg2.jpg" width=558 
+border=0><BR><BR>Clicking on 'Settings', we can enter in the coordinates we have 
+written down:<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">“<SPAN 
+lang=EN-US>Setting”&#12434;&#12463;&#12522;&#12483;&#12463;&#12375;&#12289;&#20808;&#12411;&#12393;&#26360;&#12365;&#30041;&#12417;&#12390;&#12362;&#12356;&#12383;point&#12398;&#24231;&#27161;&#20516;&#12434;&#20837;&#21147;&#12375;&#12414;&#12377;&#12290;<BR><IMG id=_x0000_i1033 
+height=254 src="CreateLightProbe_1_0.files/MatchPoints.jpg" width=492 
+border=0><BR><BR>In this case, we have set it up to rotate image A to match 
+image B. <o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#20170;&#22238;&#12398;&#12465;&#12540;&#12473;&#12391;&#12399;&#12289;&#30011;&#20687;<SPAN 
+lang=EN-US>B&#12395;&#19968;&#33268;&#12373;&#12379;&#12427;&#12383;&#12417;&#12395;&#30011;&#20687;A&#12434;rotate&#12373;&#12379;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Once all the fields are filled in correctly 
+click OK for both Match Points and Panoramic Transform. You should now have two 
+panoramas in light-probe format; something like 
+this:<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#20840;&#12390;&#12398;&#12501;&#12451;&#12540;&#12523;&#12489;&#12364;&#27491;&#12375;&#12367;&#28288;&#12383;&#12373;&#12428;&#12383;&#12425;&#12289;“<SPAN lang=EN-US>Match 
+Points”&#12392;“Panoramic 
+Transform”&#12398;&#20001;&#26041;&#12391;“OK”&#12434;&#12463;&#12522;&#12483;&#12463;&#12375;&#12414;&#12377;&#12290;&#12371;&#12398;&#26178;&#28857;&#12391;&#27425;&#12398;&#12424;&#12358;&#12394;&#12289;light-probe&#12501;&#12457;&#12540;&#12510;&#12483;&#12488;&#12398;&#12289;&#65298;&#12388;&#12398;&#12497;&#12494;&#12521;&#12510;&#30011;&#20687;&#12434;&#24471;&#12390;&#12356;&#12427;&#12399;&#12378;&#12391;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'"><IMG id=_x0000_i1034 height=419 
+src="CreateLightProbe_1_0.files/TWoResults.jpg" width=610 border=0><BR><BR>At 
+this point you can turn off the points, either by deleting them or deselecting 
+'Show <U>P</U>oints' from the <U>D</U>isplay menu on the Points window. 
+<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#30011;&#38754;&#19978;&#12398;“<SPAN 
+lang=EN-US>point&#65288;&#28857;&#65289;”&#12434;&#28040;&#21435;&#12377;&#12427;&#12371;&#12392;&#12364;&#21487;&#33021;&#12391;&#12377;&#12290;&#28040;&#21435;&#12377;&#12427;&#12395;&#12399;&#12289;“delete”&#12461;&#12540;&#12434;&#29992;&#12356;&#12427;&#12363;&#12289;“Points”&#12454;&#12451;&#12531;&#12489;&#12454;&#12398; 
+“Display”&#12513;&#12491;&#12517;&#12540;&#12363;&#12425;&#12289;“Show Points”&#12398;&#36984;&#25246;&#12434;&#35299;&#38500;&#12375;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<H3><SPAN style="mso-bookmark: part4"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Step 5) Merge<o:p></o:p></SPAN></SPAN></H3>
+<H3><SPAN style="mso-bookmark: part4"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12473;&#12486;&#12483;&#12503;&#65301;&#65306;&#12510;&#12540;&#12472;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></SPAN></H3><SPAN 
+style="mso-bookmark: part4"></SPAN>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">The final step is to merge 
+these images together. For this we will need a mask: an image whose pixels are 0 
+where we wish to use image A, 1 where we wish to use image B, and an 
+intermediate value when we wish to blend between them. You can create a mask in 
+any paint program, though Adobe Photoshop has some nice features that make it 
+easier. <o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#26368;&#24460;&#12398;&#12473;&#12486;&#12483;&#12503;&#12391;&#12399;&#12289;&#30011;&#20687;&#12434;&#12402;&#12392;&#12388;&#12395;&#12510;&#12540;&#12472;&#12375;&#12414;&#12377;&#12290;&#12371;&#12398;&#12383;&#12417;&#12395;&#12289;“<SPAN 
+lang=EN-US>mask&#65288;&#12510;&#12473;&#12463;&#65289;”&#12364;&#24517;&#35201;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;mask&#12392;&#12399;&#12289;&#30011;&#20687;A&#12434;&#29992;&#12356;&#12383;&#12356;&#31623;&#25152;&#12398;&#12500;&#12463;&#12475;&#12523;&#12364;&#65296;&#12289;&#30011;&#20687;B&#12434;&#29992;&#12356;&#12383;&#12356;&#31623;&#25152;&#12398;&#12500;&#12463;&#12475;&#12523;&#12364;&#65297;&#12289;&#12381;&#12375;&#12390;&#12371;&#12428;&#12425;&#12434;&#12502;&#12524;&#12531;&#12489;&#12375;&#12383;&#12356;&#31623;&#25152;&#12391;&#12399;&#20013;&#38291;&#12398;&#20516;&#12392;&#12394;&#12427;&#30011;&#20687;&#12398;&#12371;&#12392;&#12391;&#12377;&#12290;&#31278;&#39006;&#12434;&#21839;&#12431;&#12378;&#12289;&#12506;&#12452;&#12531;&#12488;&#12503;&#12525;&#12464;&#12521;&#12512;&#12434;&#20351;&#12360;&#12400;mask&#12398;&#20316;&#25104;&#12399;&#12391;&#12365;&#12414;&#12377;&#12364;&#12289;Adobe 
+Photoshop&#12434;&#29992;&#12356;&#12427;&#12371;&#12392;&#12391;&#12289;&#12371;&#12398;&#20316;&#26989;&#12399;&#12378;&#12387;&#12392;&#31777;&#21336;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">If you are familiar with 
+Photoshop, save out JPEG versions of our two panoramas and load them into 
+Photoshop. You can copy/paste one panorama as a layer on top of the other one, 
+and then add a mask to that layer. This way, as you paint on the mask you can 
+see the result visually. If you don't have Photoshop, you'll just have to draw a 
+mask and try it. When you have a good mask, save the mask out as a Windows BMP, 
+TIFF, or other uncompressed format that <SPAN class=SpellE>HDRShop</SPAN> 
+supports. <o:p></o:p></SPAN></P>
+<P><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">Photoshop&#12395;&#24931;&#12428;&#35242;&#12375;&#12435;&#12391;&#12356;&#12427;&#12398;&#12391;&#12354;&#12428;&#12400;&#12289;&#20316;&#25104;&#12375;&#12383;&#12497;&#12494;&#12521;&#12510;&#30011;&#20687;&#12434;JPEG&#12391;&#20445;&#23384;&#12375;&#12289;Photoshop&#12391;&#12525;&#12540;&#12489;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#19968;&#26041;&#12398;&#12497;&#12494;&#12521;&#12510;&#30011;&#20687;&#12434;&#12418;&#12358;&#19968;&#26041;&#12398;&#30011;&#20687;&#12424;&#12426;&#19978;&#12398;&#12524;&#12452;&#12516;&#12540;&#12392;&#12375;&#12390;&#12467;&#12500;&#12540;&#65286;&#12506;&#12540;&#12473;&#12488;&#12375;&#12289;&#12381;&#12371;&#12395;mask&#12434;&#12363;&#12369;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;&#12371;&#12398;&#26041;&#27861;&#12434;&#29992;&#12356;&#12427;&#12392;&#12289;mask&#12434;&#33394;&#12389;&#12369;&#12375;&#12383;&#22580;&#21512;&#12289;&#12381;&#12398;&#32080;&#26524;&#12434;&#35222;&#35226;&#30340;&#12395;&#12415;&#12390;&#12392;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;Photoshop&#12434;&#12418;&#12387;&#12390;&#12356;&#12394;&#12369;&#12428;&#12400;&#12289;&#33258;&#20998;&#12391;mask&#12434;&#25551;&#12356;&#12390;&#12415;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#12358;&#12414;&#12367;&#12391;&#12365;&#12383;&#12425;&#12289;mask&#12434;Windows 
+BMP&#12289;TIFF&#12289;&#12414;&#12383;&#12399;HDR Shop&#12364;&#12469;&#12509;&#12540;&#12488;&#12377;&#12427;&#12381;&#12398;&#20182;&#12398;&#38750;&#22311;&#32302;&#12501;&#12457;&#12540;&#12510;&#12483;&#12488;&#12391;&#20445;&#23384;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;<o:p></o:p></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">The completed mask should 
+look something like this:<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#23436;&#25104;&#12375;&#12383;<SPAN 
+lang=EN-US>mask&#12399;&#20197;&#19979;&#12398;&#12424;&#12358;&#12395;&#12415;&#12360;&#12414;&#12377;&#65306;<BR><A 
+href="CreateLightProbe_1_0.files/mask2.jpg"><SPAN 
+style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1035 
+height=400 src="CreateLightProbe_1_0.files/mask2.jpg" width=400 
+border=0></SPAN></A><BR>You can download this mask here: <A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/mask2.bmp">mask2.bmp</A><o:p></o:p></SPAN></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12398;<SPAN lang=EN-US>mask&#12399;&#12289;<A 
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/mask2.bmp">mask2.bmp</A>&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12391;&#12365;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">Next load this mask into 
+<SPAN class=SpellE>HDRShop</SPAN>. To merge the two panoramas using the mask, 
+choose C<U>a</U>lculate from the <U>I</U>mage menu, and choose the values like 
+so:<o:p></o:p></SPAN></P>
+<P><SPAN style="FONT-FAMILY: 'MS PGothic'">&#27425;&#12395;&#12289;<SPAN lang=EN-US>mask&#12434;HDR 
+Shop&#12395;&#12525;&#12540;&#12489;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;Mask&#12395;&#12424;&#12387;&#12390;&#65298;&#12388;&#12398;&#12497;&#12494;&#12521;&#12510;&#30011;&#20687;&#12434;&#12510;&#12540;&#12472;&#12373;&#12379;&#12427;&#12395;&#12399;&#12289; “Image”&#12513;&#12491;&#12517;&#12540;&#12363;&#12425; 
+“Calculate”&#12434;&#36984;&#25246;&#12375;&#12289;&#20516;&#12434;&#36984;&#25246;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;<BR><IMG id=_x0000_i1036 height=254 
+src="CreateLightProbe_1_0.files/ApplyImage.jpg" width=510 border=0><BR><BR>This 
+does an alpha blend between image B and image A using the mask. <A 
+name=part6><o:p></o:p></A></SPAN></SPAN></P>
+<P><SPAN style="mso-bookmark: part6"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#12371;&#12398;&#20363;&#12391;&#12399;&#12289;<SPAN 
+lang=EN-US>mask&#12434;&#20351;&#12387;&#12390;&#30011;&#20687;B&#12392;&#30011;&#20687;A&#12398;&#12450;&#12523;&#12501;&#12449;&#12502;&#12524;&#12531;&#12489;(alpha 
+blend)&#12434;&#34892;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;<o:p></o:p></SPAN></SPAN></SPAN></P>
+<H3><SPAN style="mso-bookmark: part6"><SPAN lang=EN-US 
+style="FONT-FAMILY: 'MS PGothic'">The Results<o:p></o:p></SPAN></SPAN></H3>
+<H3><SPAN style="mso-bookmark: part6"><SPAN 
+style="FONT-FAMILY: 'MS PGothic'">&#32080;&#26524;<SPAN 
+lang=EN-US><o:p></o:p></SPAN></SPAN></SPAN></H3><SPAN 
+style="mso-bookmark: part6"></SPAN>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">The result of this is your 
+finished light probe! The two cameras and the regions of bad sampling have been 
+removed, and it is ready to use as an illumination 
+environment.<o:p></o:p></SPAN></P>
+<P><SPAN lang=EN-US style="FONT-FAMILY: 'MS PGothic'">light 
+probe&#12398;&#23436;&#25104;&#24418;&#12364;&#12391;&#12365;&#12414;&#12375;&#12383;&#65281;&#65298;&#12388;&#12398;&#12459;&#12513;&#12521;&#12392;&#12289;&#19981;&#36969;&#20999;&#12394;&#12469;&#12531;&#12503;&#12522;&#12531;&#12464;&#38936;&#22495;&#12364;&#21462;&#12426;&#38500;&#12363;&#12428;&#12289;&#29031;&#26126;&#29872;&#22659;&#12392;&#12375;&#12390;&#20351;&#12358;&#28310;&#20633;&#12364;&#25972;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;<BR><BR><A 
+href="CreateLightProbe_1_0.files/FinalResult.jpg"><SPAN 
+style="TEXT-DECORATION: none; text-underline: none"><IMG id=_x0000_i1037 
+height=400 src="CreateLightProbe_1_0.files/FinalResult.jpg" width=400 
+border=0></SPAN></A><BR><BR><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><o:p></o:p></SPAN></P></DIV></BODY></HTML>

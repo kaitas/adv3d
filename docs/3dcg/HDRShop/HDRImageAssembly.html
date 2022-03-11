@@ -1,0 +1,289 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./HDRImageAssembly.files/filelist.xml">
+<link rel=Edit-Time-Data href="./HDRImageAssembly.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>カメラ・レスポンス・カーブを用いたHDR Imageの構築</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>hiramitsu</o:Author>
+  <o:LastAuthor>hiramitsu</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2005-03-17T04:47:00Z</o:Created>
+  <o:LastSaved>2005-03-17T06:12:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>464</o:Words>
+  <o:Characters>2647</o:Characters>
+  <o:Company>NES</o:Company>
+  <o:Lines>22</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>3250</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Century;
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h2
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ Ｐゴシック";
+	font-weight:bold;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";}
+span.MsoCommentReference
+	{mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=JA link=blue vlink=purple style='tab-interval:42.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoNormal><b><span style='font-size:18.0pt;mso-bidi-font-size:16.0pt;
+font-family:"ＭＳ Ｐゴシック"'>カメラ・レスポンス・カーブを用いた<span lang=EN-US>HDR Imageの構築<o:p></o:p></span></span></b></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDR
+Shopは、異なるシャッター速度で撮影された、通常の24ビット・イメージのシークエンスから、ハイ・ダイナミック・レンジ・イメージ (HDRI)を作成します。撮影にあたっては、カメラを動かさないこと、最長の露光において、最も暗い部分が明瞭に見えるように、そして最短の露光では、最も明るい部分のイメージが白く「blasted
+out」しないために「bｒacketed」であることを留意してください。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>最小と最大の露光レベルが確定したら、露光の間隔を選びます。選択にあたっては、特にカメラのレスポンス・カーブがどの程度キャリブレートされているかも考慮に入れます。詳細は、チュートリアル「カメラ・カーブ・キャリブレーション」を見て下さい。もしレスポンス・カーブ（反応曲線）がわからなければ、たとえば、<span
+lang=EN-US>1段階別というように、各イメージを互いに近接したシークエンスとして撮ることを推奨します。カメラ・カーブが一旦キャリブレートされれば、3段階ごとなど、もう少しシークエンスを離すことが可能です。経験上、各イメージを近づけすぎることはできないので、決心がつかないときは、1段階ずつのシークエンスにしてください。そうすれば、カメラ・カーブがうまくキャリブレートされない場合でも、比較的良い結果を導き出すことができるでしょう。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>はじめに、スクリーン上部の“<span
+lang=EN-US>Create”のプルダウンメニューから、 “Assemble Image Sequence”をクリックします。<span
+style="mso-spacerun: yes">&nbsp; </span>“Assemble HDR Image from LDR Sequence”ダイアログ・ボックスが表示されます。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><img
+width=822 height=527 id="_x0000_i1025"
+src="HDRImageAssembly.files/assemblehdr.jpg" border=0><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>はじめに、<span
+lang=EN-US>LDRイメージ・シークエンスをロードします。 “Load Images”ボタンをクリックし、ファイル・セレクターからイメージの全シークエンスを選択します。イメージのファイルネームが、ダイアログ・ボックス内のワークシートに表示されます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>ワークシート内のイメージは、最短の露光から最長の露光まで、順番に表示されるようになっています。<span
+lang=EN-US>HDRShopは、自動的に各イメージのピクセルの平均輝度 (the average brightness) から、イメージをソートします。この輝度は、
+“sort”カラム内に表示されます。もし、この順番が何らかの理由で正しくない場合、 “sort”カラムに直接（訳注：手動で）イメージのピクセル平均値を入力する事が出来ます。HDR
+Shopは、この入力された数字に従って、イメージをソートします。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>次に、各イメージを撮影したカメラのレスポンス・カーブを指定します。上述したように、このカーブは前のチュートリアルで計算することができます。　カメラ・レスポンス・カーブを選択するために、
+“<span lang=EN-US>Change”ボタンをクリックします。カメラがスタンダード・ガンマ・カーブやリニアー・カーブを用いることを知っているのであれば、それらを直接入力します。“gamma
+curve”タブをクリックし、ガンマ・カーブの値を入力してください。多くのカメラは、ガンマ2.2のカーブに近い、もしくはガンマ=1.0、つまり直線に近いです。より良い結果のために、自分自身で計算したレスポンス・カーブを用いることができるでしょう。
+“Custom Curve”タブをクリックし、カーブのファイル名をテキストボックスに入力する、または、 “Browse”からファイルを選択します。<span
+style="mso-spacerun: yes">&nbsp; </span>“Renormalize Curve”チェックボックスが選択されている場合、HDR
+Shopは自動的に、カーブの最大値が「1」になるようにスケーリングを掛けます。シークエンスからHDRイメージを組み立てるために、このチェックボックスは常に選択されているべきです。適切なカーブがロード、或いは選択されたら、
+“OK”をクリックします。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>次に、どのイメージが、どのような露光設定で撮影されたかを<span
+lang=EN-US>HDR Shopに知らせる必要があります。これらの値はカラーチャンネル毎か、イメージ全体かで特定することができます。ほとんどの撮影素材では、異なるカラーチャンネルにおいて、相対的なEV値は変わらないでしょう。
+“Select Channels”エリアで、 “R=G=B”ボタンを選択してください。もし単一のカラーチャンネルが選択されているならば、ワークシートに入力された値は、その時点で選択されたカラーチャンネルのみに適用されるでしょう。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+12pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='text-indent:5.5pt;mso-char-indent-count:.5;mso-char-indent-size:11.0pt;
+line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:12pt'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>“<span
+lang=EN-US>Calculate Scale Increments” 内の “Calculate”ボタンは、シークエンスのイメージにおける光量の相対値をHDR
+Shopに自動的に計算させるようにします。しかしながらこれを用いるためには、各イメージが互いに接近して撮影されていることと、カメラ・カーブを知っていなければいけません。一般的には、シークエンスのイメージにおける光量の相対値を知っていることと、それらの値を手動で入力することが必要といえます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>多くの場合、シークエンスのイメージは、<span
+lang=EN-US>f-stopの間隔は一定で撮影されているでしょう。この場合、 “Use Preset Scale Increments”エリアの適切なボタンをクリックしてください。もしイメージがその他のf段階の間隔で撮影されているならば
+“Other”ボタンをクリックし、インクリメントを手動で入力してください。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>f-stopインクリメントのいずれかのボタンが押された時（訳注：撮影時の
+f-stop が等間隔の時）、“Relative Stops” カラムの値は、押されたボタンの f-stop インクリメント値とイコールになるはずです。このカラムは、一つ前のイメージと比べて、どれだけ
+f-stop が明るいか（訳注：レンズが明るいか）を示しています。“Absolute Stops”カラムは、シークエンスの最初のイメージと比べて、どれだけf-stopが明るいかを示します。同様に、“Relative
+Scale”カラムは一つ前のイメージと比べて何倍明るいかを示し、そして “Absolute Scale”カラムはシークエンスの最初のイメージと比べて、何倍明るいかを示します。そのスケール値は、f-stop
+の 底2のlog 値になります（訳注：つまり、そのスケール値は、2のf-stop乗になります）。なぜなら、f-stop は露光レベルを指数で表した値であるからです。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>イメージが一定していない間隔で撮られたならば、直接ワークシート内の適切なセルに、これらの値を手動で入力してください。注意：この作業は、行内の他の値も自動的に更新します。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>最後に、イメージがロードされ、カメラ・カーブが選択され、照度が入力されたら、
+“<span lang=EN-US>Generate Image”ボタンを選択してください。各イメージがひとつのHDRイメージとしてコンパイルされます。</span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";mso-font-kerning:
+0pt'><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック";mso-font-kerning:0pt'><a href="index.html">「参考：HDRShopの日本語訳」に戻る</a>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

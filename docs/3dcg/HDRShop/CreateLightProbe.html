@@ -1,0 +1,667 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./CreateLightProbe.files/filelist.xml">
+<link rel=Edit-Time-Data href="./CreateLightProbe.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Creating a Light Probe </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>hiramitsu</o:Author>
+  <o:LastAuthor>hiramitsu</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>8</o:TotalTime>
+  <o:Created>2005-03-17T04:10:00Z</o:Created>
+  <o:LastSaved>2005-03-17T05:53:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>1042</o:Words>
+  <o:Characters>5940</o:Characters>
+  <o:Company>NES</o:Company>
+  <o:Lines>49</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>7294</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Century;
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h2
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";
+	font-weight:bold;}
+h3
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1596672816;
+	mso-list-template-ids:1805038008;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+</head>
+
+<body lang=JA link=blue vlink=blue style='tab-interval:42.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h2><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Light Probeの作成<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;</span><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>“<span
+lang=EN-US>Light Probe”とは、全方位（360°パノラマ）の、HDRI (high-dynamic range image)のことです。Light
+probeでは全ての方角を見渡すことができ、また実際の光源レベルを記録できるので、入射照明の測定に役立ちます。このため、レンダリングされた画像に、現実的な照明環境や背景光を提供することが可能です。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly'><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>このチュートリアルでは、<span lang=EN-US>HDR
+Shopを使ったlight probeの作成方法を紹介します。全般的に、以下のようなステップを踏んでいきます。<o:p></o:p></span></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>はじめに、ミラー・ボールの写真を複数枚撮影します。 <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>次に、ボールの縁の画像を切り抜きます。 <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>そして、対応点<span lang=EN-US> (corresponding
+     points)を特定します。 <o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>これによって、各画像を一致させるための<span lang=EN-US><span
+     style="mso-spacerun: yes">&nbsp; </span>unwarpやrotate機能が使えます。 <o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>最後に、全ての画像をマージします。 <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:12.0pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo3;
+     tab-stops:list 36.0pt'><span style='font-size:11.0pt;mso-bidi-font-size:
+     12.0pt;font-family:"ＭＳ Ｐゴシック"'>これで、<span lang=EN-US>light probeの作成が完了します。 <a
+     name=part1><o:p></o:p></a></span></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly'><span style='mso-bookmark:
+part1'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly'><span style='mso-bookmark:
+part1'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part1'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>ステップ１：写真の撮影<span lang=EN-US><o:p></o:p></span></span></span></h3>
+
+<span style='mso-bookmark:part1'></span>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>適切な<span
+lang=EN-US>light probe画像を得る方法としては、<a href="http://www.mcmaster.com/">McMaster-Carr</a>社の<a
+href="http://www.mcmaster.com/catalog/109/html/3366.html">Precision Grade
+Chrome Steel Balls</a>のようなミラーコーティングされた球体 (mirrored sphere)を使用して、画像撮影を行うことが挙げられます。手元にあるカメラが正投影(orthogonal)と仮定すると、理論的には１枚のミラー・ボールの写真で、全ての方角を「見る」ことができるといえます。つまり、ミラー・ボールの側から見えるあらゆる物は、ボールに鏡映されるので、カメラ側で見ることができるといえるでしょう。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>残念ながら、ボールの縁に鏡映された物は、極端に伸びたり、歪んだりしてしまうため、<span
+lang=EN-US>unwarpした際に質の悪い画像となってしまいます。さらに、ボールの中心では、撮影に使われたカメラが映りこむため、その背景は不明瞭になるでしょう。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>こうした問題点を軽減するためには、異なる角度（または、方向）から球体の写真を２枚撮影し、それらをブレンドすることで、映りこんだカメラと歪んだ領域を取り除く必要があります。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>上で述べたような、ミラー・ボールにおける問題の２箇所は、カメラに直接向かっている点（訳注：球体の中心）と、カメラから離れている部分（訳注：球体の端）のため、２枚の写真はそれぞれから<span
+lang=EN-US>90°離れた位置から撮影されるべきです（図を参照）。この方法では、不適切なサンプリングの領域と、カメラが妨害している部分は、２つの画像上では異なる箇所に位置することになります。（ボールの反対側からの撮影は、片方の画像の不適切なサンプリング領域と、もう１枚の画像におけるカメラの位置と同じになってしまうため、うまくいかないということに注意してください。逆もまた然り）。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>以下のような、対の<span
+lang=EN-US>(HDRの)画像を撮影してください：<o:p></o:p></span></span></p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0mm 0mm 0mm 0mm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><a
+  href="CreateLightProbe_1_0.files/graceA.jpg"><span style='text-decoration:
+  none;text-underline:none'><img border=0 width=400 height=266 id="_x0000_i1026"
+  src="CreateLightProbe_1_0.files/graceA.jpg"></span></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><a
+  href="CreateLightProbe_1_0.files/graceB.jpg"><span style='text-decoration:
+  none;text-underline:none'><img border=0 width=400 height=266 id="_x0000_i1027"
+  src="CreateLightProbe_1_0.files/graceB.jpg"></span></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>サンプル画像が必要な場合、次のサイトから取得してください：<span
+lang=EN-US><a
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceA.hdr">graceA.hdr</a>,
+<a href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceB.hdr">graceB.hdr</a><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>上級者の方へ：　ミラー・ボールの上下が少し見切れて撮影されても大丈夫です。これらの箇所は、他の写真から復元することが可能です。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDRShopでは、画像をより良いパノラマ・フォーマットにするために、これらの画像をwarpする機能や、方位を合わせるために、これらの画像を3次元的ににrotateする機能が用意されています。<o:p></o:p></span></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><a name=part2><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></a></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part2'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part2'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>ステップ２：イメージの切り抜き<span lang=EN-US><o:p></o:p></span></span></span></h3>
+
+<span style='mso-bookmark:part2'></span>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>次のステップでは、ミラー・ボールの最端まで、イメージを切り抜きます。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>はじめに、
+“<span lang=EN-US>Circle”オプションが<i>チェックされているか</i>確認してください。 “Select”メニューから、“Draw
+Options”を選択することで見つけられます。“Circle”オプションにチェックを入れることで、選択された長方形の枠に内接する楕円を描くことができます。この機能は、選択範囲とミラー・ボールの端を一致させる際に役立ちます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>もし、ミラー・ボールが写真の端の方へ移動してしまっていたら、“<span
+lang=EN-US>Restrict Selection to Image”オプションが<i>チェックされていない</i>ことを確認してください。このオプションは、
+“Select”メニューから、“Options”をたどることで見つかります。チェックを外すことで、画像の境界を越えた領域を選択することが可能になります。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>ミラー・ボール周囲の領域を選択し、ボールの端の境界の辺りまで円を調整してください。以下の画像のような状態が望ましいです。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>この作業を終えたら、
+“<span lang=EN-US>Image”メニューから、“Crop”コマンドを用いて画像を切り取ってください。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><a
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/graceA_cropping.jpg"><span
+style='text-decoration:none;text-underline:none'><img border=0 width=391
+height=298 id="_x0000_i1028"
+src="CreateLightProbe_1_0.files/graceA_cropping_small.jpg"></span></a><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>切り抜くと、次のような２つの画像ができるはずです</span><span
+style='font-family:"ＭＳ Ｐゴシック"'>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0mm 0mm 0mm 0mm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><a
+  href="CreateLightProbe_1_0.files/graceA_cropped.jpg"><span style='text-decoration:
+  none;text-underline:none'><img border=0 width=400 height=362 id="_x0000_i1029"
+  src="CreateLightProbe_1_0.files/graceA_cropped.jpg"></span></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><a
+  href="CreateLightProbe_1_0.files/graceB_cropped.jpg"><span style='text-decoration:
+  none;text-underline:none'><img border=0 width=400 height=363 id="_x0000_i1030"
+  src="CreateLightProbe_1_0.files/graceB_cropped.jpg"></span></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>ここで、保存しておきましょう。（“<span
+lang=EN-US>File”から、“Save As.....”）。オリジナルの画像を上書きしないようにしてください。<o:p></o:p></span></span></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><a name=part3><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></a></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part3'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part3'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>ステップ３：対応点<span lang=EN-US> (corresponding
+points)の特定<o:p></o:p></span></span></span></h3>
+
+<span style='mso-bookmark:part3'></span>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>２つの画像を一致させるために、両者間が何度離れているかを求める必要があります。<span
+lang=EN-US>HDR Shopはこの作業をほぼ自動的に行いますが、そのためにはそれぞれのミラー・ボール画像における対応する２点の座標値（画像内で結びつく、同じ特徴）をHDR
+Shopに知らせる必要があります。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>これらの座標値を得るには、“<span
+lang=EN-US>Window”メニュー以下の、“Point Editor”を利用するのが最も簡単な方法であるといえます（パノラマ変換のウィンドウがまだ開いていたら、終了させてください）。“Point
+Editor”ウィンドウが開いたら、画像上でCtrlキーとマウスクリックを行うことで、画像上に新しい点(point)を作成します。また、既存の点をドラッグして利用することもできます。今回の場合は、各イメージに２つずつの、同等の特徴をもつ点(point)が必要になります。下記に示した例では、上部にある２つの光源をpointとして選択しています。<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><img
+border=0 width=537 height=639 id="_x0000_i1031"
+src="CreateLightProbe_1_0.files/PointEditor.jpg">ｓ<o:p></o:p></span></p>
+
+<p style='margin-bottom:12.0pt;line-height:12.0pt;mso-line-height-rule:exactly'><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-bottom:12.0pt;line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>現行の<span
+lang=EN-US>HDRShopでは、これらの座標値を書き留めておく必要があります（将来的には、直接、pointを使えるようになります）。今回の例における座標値は以下の通りです：<o:p></o:p></span></span></p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0mm 0mm 0mm 0mm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>X<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Y<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Image
+  A:&nbsp;&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>93.18750<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>140.93750<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>236.18750<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>198.06250<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Image B:<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>233.87500<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>186.12500<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>417.43750<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>187.56250<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><a name=part4><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></a></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>ステップ４：<span lang=EN-US>UnwarpとRotate<o:p></o:p></span></span></span></h3>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>これで、画像を<span lang=EN-US>light probe (アンギュラ・マップ:angular
+map)パノラマ・フォーマットにwarpするのと同時に、それらパノラマ画像の方位（もしくは、位置）を合わせる3DのRotation 機能を適用する準備が整いました。<o:p></o:p></span></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>パノラマ変換コマンドを用います。 “<span lang=EN-US>Image”メニュー下の“Panorama”から、“PanoramicTransformations..”を選びます。<o:p></o:p></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:part4'><span lang=EN-US
+style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=558 height=352
+id="_x0000_i1032" src="CreateLightProbe_1_0.files/PanoramicTransformDlg.jpg"><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>“<span lang=EN-US>Source Image”は、warpする元画像になります。“Destination
+Image”は、“New Image”のままでよいです。“Source Image”の“Format”は“Mirrored Ball”になります。また、“Destination
+Image”の“Format”は、“Light Probe (Angular Map) Format”となります。“Destination Image”の解像度は変更することができます。また、よりよい品質の画像を望むのであれば、“Supersample”の値を増加します。<o:p></o:p></span></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>今回は、画像<span lang=EN-US>Bをrotation無しでwarpさせ、画像Bに対して画像Aが一致するように、画像Aをrotateし、warpさせます。このため、画像Bを“Source
+Image”として選択します。“3D Rotation”では“None””を選択し、“OK”ボタンをクリックしてください。これによって、warpしたバージョンの画像Bが生成されます。<o:p></o:p></span></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>ここで、パノラマ変換ダイアログに戻ります。画像<span lang=EN-US>Aに対しても、先ほどと同様の作業を行います。今回は“3D
+Rotation””以下から、“Match Points”を選択します。<o:p></o:p></span></span></span></p>
+
+<p><span style='mso-bookmark:part4'><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><br>
+<img border=0 width=558 height=352 id="_x0000_i1054"
+src="CreateLightProbe_1_0.files/PanoramicTransformDlg2.jpg"><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>“<span lang=EN-US>Setting”をクリックし、先ほど書き留めておいたpointの座標値を入力します。<o:p></o:p></span></span></span></p>
+
+<p><span style='mso-bookmark:part4'><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:part4'><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><br>
+<img border=0 width=492 height=254 id="_x0000_i1058"
+src="CreateLightProbe_1_0.files/MatchPoints.jpg"><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>今回のケースでは、画像<span lang=EN-US>Bに一致させるために画像Aをrotateさせます。<o:p></o:p></span></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>全てのフィールドが正しく満たされたら、“<span lang=EN-US>Match
+Points”と“Panoramic Transform”の両方で“OK”をクリックします。この時点で次のような、light-probeフォーマットの、２つのパノラマ画像を得ているはずです</span></span></span><span
+style='mso-bookmark:part4'><span style='font-family:"ＭＳ Ｐゴシック"'>。<span
+lang=EN-US><o:p></o:p></span></span></span></p>
+
+<p><span style='mso-bookmark:part4'><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:part4'><span lang=EN-US
+style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=610 height=419
+id="_x0000_i1035" src="CreateLightProbe_1_0.files/TWoResults.jpg"><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>画面上の“<span lang=EN-US>point（点）”を消去することが可能です。消去するには、“delete”キーを用いるか、“Points”ウィンドウの
+“Display”メニューから、“Show Points”の選択を解除します。<o:p></o:p></span></span></span></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part4'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>ステップ５：マージ<span lang=EN-US><o:p></o:p></span></span></span></h3>
+
+<span style='mso-bookmark:part4'></span>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>最後のステップでは、画像をひとつにマージします。このために、“<span
+lang=EN-US>mask（マスク）”が必要になります。maskとは、画像Aを用いたい箇所のピクセルが０、画像Bを用いたい箇所のピクセルが１、そしてこれらをブレンドしたい箇所では中間の値となる画像のことです。種類を問わず、ペイントプログラムを使えばmaskの作成はできますが、Adobe
+Photoshopを用いることで、この作業はずっと簡単になります。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>Photoshopに慣れ親しんでいるのであれば、作成したパノラマ画像をJPEGで保存し、Photoshopでロードしてください。一方のパノラマ画像をもう一方の画像より上のレイヤーとしてコピー＆ペーストし、そこにmaskをかけることができます。この方法を用いると、maskを色づけした場合、その結果を視覚的にみてとることができます。Photoshopをもっていなければ、自分でmaskを描いてみてください。うまくできたら、maskをWindows
+BMP、TIFF、またはHDR Shopがサポートするその他の非圧縮フォーマットで保存してください。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>完成した<span
+lang=EN-US>maskは以下のようになるでしょう：<o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><br>
+<a href="CreateLightProbe_1_0.files/mask2.jpg"><span style='text-decoration:
+none;text-underline:none'><img border=0 width=400 height=400 id="_x0000_i1036"
+src="CreateLightProbe_1_0.files/mask2.jpg"></span></a><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>この<span
+lang=EN-US>maskは、<a
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images5/mask2.bmp">mask2.bmp</a>からダウンロードできます。<o:p></o:p></span></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>次に、<span
+lang=EN-US>maskをHDR Shopにロードしてください。Maskによって２つのパノラマ画像をマージさせるには、 “Image”メニューから “Calculate”を選択し、値を選択してください。<o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><br>
+<img border=0 width=510 height=254 id="_x0000_i1037"
+src="CreateLightProbe_1_0.files/ApplyImage.jpg"><o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><a name=part6><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></a></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part6'><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"ＭＳ Ｐゴシック"'>この例では、<span lang=EN-US>maskを使って画像Bと画像Aのアルファブレンド(alpha
+blend)を行っています。<o:p></o:p></span></span></span></p>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part6'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part6'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></span></h3>
+
+<h3 style='line-height:12.0pt;mso-line-height-rule:exactly'><span
+style='mso-bookmark:part6'><span style='font-size:11.0pt;mso-bidi-font-size:
+13.5pt;font-family:"ＭＳ Ｐゴシック"'>結果<span lang=EN-US><o:p></o:p></span></span></span></h3>
+
+<span style='mso-bookmark:part6'></span>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>lightprobeの完成形ができました！２つのカメラと、不適切なサンプリング領域が取り除かれ、照明環境として使う準備が整っています。<o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='mso-fareast-font-family:"ＭＳ Ｐゴシック"'><a
+href="CreateLightProbe_1_0.files/FinalResult.jpg"><span style='color:windowtext;
+text-decoration:none;text-underline:none'><img border=0 width=400 height=400
+id="_x0000_i1025" src="CreateLightProbe_1_0.files/FinalResult.jpg"></span></a><br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";mso-font-kerning:
+0pt'><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック";mso-font-kerning:0pt'><a href="index.html">「参考：HDRShopの日本語訳」に戻る</a>
+<o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;
+mso-fareast-font-family:"ＭＳ Ｐゴシック";mso-font-kerning:1.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

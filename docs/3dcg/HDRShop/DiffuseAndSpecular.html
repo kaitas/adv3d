@@ -1,0 +1,313 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./DiffuseAndSpecular.files/filelist.xml">
+<link rel=Edit-Time-Data href="./DiffuseAndSpecular.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Diffuse ConvolutonとSpecular Convolutionの計算</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>hiramitsu</o:Author>
+  <o:LastAuthor>hiramitsu</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2005-03-17T04:14:00Z</o:Created>
+  <o:LastSaved>2005-03-17T05:57:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>378</o:Words>
+  <o:Characters>2156</o:Characters>
+  <o:Company>NES</o:Company>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2647</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Century;
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h2
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ Ｐゴシック";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0mm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 0mm 30.0mm 18.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=JA link=blue vlink=purple style='tab-interval:42.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h2><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Diffuse ConvolutonとSpecular
+Convolutionの計算<o:p></o:p></span></h2>
+
+<h2 style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:18.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h2>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'>HDR
+Shopでは、ハイ・ダイナミック・レンジ(HDR)の360度パノラマ画像（つまり、light probe）上で、 “diffuse convolution”や”specular
+convolution”を行うことができます。この機能は、 “diffuse”テキスチャ・マップや、 “rough specular”テキスチャ・マップの事前処理を行いたいときに有用です。例としては、リアルタイム・アプリケーションでlight
+probeを用いてオブジェクトに光を当てたいときが挙げられます。また、このときのlight probeのフォーマットは、 “latitude/longitude（緯度/経度）”でなければいけません。パノラマ・フォーマットの変換方法に関しては、チュートリアル「パノラマ画像の変換
+(Panoramic Image Conversion)」を参照してください。各ピクセルは、入射照明に相当する半球での、コサインによる加重積分値に置き換えられます。非数学的用語でいえば、
+“Diffuse Convolution”は、拡散反射オブジェクトに照明をあてるための環境マップです（法線ベクトル方向でサンプリングされる）。light
+probe によって照らされていることをしめすために使うと良いでしょう。<span style="mso-spacerun: yes">&nbsp;
+</span>“Specular convolution”は、大まかであっても、光沢感のあるオブジェクトに照明をあてるための環境マップです（反射ベクトル方向でサンプリングされる）。Convolutionの計算にはかなりの時間がかかるため、はじめに画像をダウンサンプリング（訳注：画像解像度の縮小）をしたほうが良いでしょう。詳細は、<a
+href="http://www.debevec.org/ReflectionMapping/の"></a> “reflection mapping”をご覧ください。<o:p></o:p></span></p>
+
+<p style='line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><a
+href="http://www.debevec.org/ReflectionMapping/">http://www.debevec.org/ReflectionMapping/</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:12.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>1.　HDR Shopに、latitude/longitudeフォーマットのlight probeをロードしてください。<a
+href="http://www.ict.usc.edu/graphics/HDRShop/tutorial/images/grace_latlong.hdr">sample
+light probe</a>を使って始めてみることもできます。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>2.　画像サイズを変更します。メニューバーから、 “Image”をクリックして、 “Size”から“Half
+Size”を選んでください。HDR Shopがconvolution計算を適切な時間で行える時点まで、これを何度か繰り返してください。この例では、画像は128x64までサイズ変更を行い、convolution計算には約96秒を要しています。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>3.　diffuse convolutionは、選択されているウィンドウ上で行われるので、light
+probe画像をクリックして、それが選択されていることを確認してください。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>4.　メニューバーの“Image” をクリックして、 “Panorama”から“Diffuse/Specular
+Convolution”を選んでください（訳注：原文では、 “Image”から “Diffuse Blur”を選ぶとなっていますが、このメニューは用意されていません）。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>5.　純粋なdiffuse convolutionを行う場合は、 “Phong Exponent”値はデフォルト(1.000)を利用してください。Convolutionをrough
+specularに適応させるには、“Phong Exponent”の値を高めにしてください。Phong Exponent”値が高い場合、下記に示したように、明るいピクセルの周囲には、よりはっきりとしたローブが生じます。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:27.5pt;text-indent:-27.5pt;mso-char-indent-count:-2.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>6.　HDR Shopがdiffuse convolutionのプロセスに10秒以上かかる際は、警告メッセージが表示されます。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:16.5pt;text-indent:-16.5pt;mso-char-indent-count:-1.5;mso-char-indent-size:
+11.0pt;line-height:12.0pt;mso-line-height-rule:exactly;mso-char-indent-size:
+10.5pt'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック"'>7.　ステップ２に戻り、<span style="mso-spacerun: yes">&nbsp;
+</span>“Half Size”オプションの代わりに“Arbitrary Resize”オプションを用いて、元のlatitude/longitude画像にサイズを変更することも可能です。<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='mso-cellspacing:0mm;
+ mso-padding-alt:3.75pt 3.75pt 3.75pt 3.75pt'>
+ <tr>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span style='font-family:"ＭＳ Ｐゴシック"'>画像<span lang=EN-US>: <o:p></o:p></span></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span style='font-family:"ＭＳ Ｐゴシック"'>オリジナル<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Diffuse
+  Convolution <o:p></o:p></span></p>
+  </td>
+  <td colspan=2 style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'>Specular Convolution <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>Phong
+  Exponent: <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>&nbsp; <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>1.0 <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>50.0 <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'>100.0 <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'>&nbsp; <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=128 height=64
+  id="_x0000_i1025" src="DiffuseAndSpecular_1_0.files/image001.jpg">&lt;&gt; <o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=128 height=64
+  id="_x0000_i1026" src="DiffuseAndSpecular_1_0.files/image002.jpg"><o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=128 height=64
+  id="_x0000_i1027" src="DiffuseAndSpecular_1_0.files/image003.jpg"><o:p></o:p></span></p>
+  </td>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"ＭＳ Ｐゴシック"'><img border=0 width=128 height=64
+  id="_x0000_i1028" src="DiffuseAndSpecular_1_0.files/image004.jpg"><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"ＭＳ Ｐゴシック"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:"ＭＳ Ｐゴシック";mso-font-kerning:
+0pt'><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"ＭＳ Ｐゴシック";mso-font-kerning:0pt'><a href="index.html">「参考：HDRShopの日本語訳」に戻る</a>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span><span lang=EN-US
+style='font-family:"ＭＳ Ｐゴシック"'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
