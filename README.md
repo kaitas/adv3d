@@ -1,5 +1,8 @@
 # adv3d 次世代コンテント制作技術研究委員会 website
 
+
+![https://akihiko.shirai.as/adv3d/images/feature.gif](https://akihiko.shirai.as/adv3d/images/feature.gif)
+
 このリポジトリはWebサイトのアーカイブです。
 もともと adv3d.jp というウェブサイトで研究成果の発信として製作されたものです。
 
