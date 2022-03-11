@@ -3,10 +3,16 @@
 
 ![https://akihiko.shirai.as/adv3d/images/feature.gif](https://akihiko.shirai.as/adv3d/images/feature.gif)
 
-このリポジトリはWebサイトのアーカイブです。
-もともと adv3d.jp というウェブサイトで研究成果の発信として製作されたものです。
+このリポジトリはWebサイト( adv3d.jp )のアーカイブです。
 
-次世代コンテント制作技術研究委員会は財団法人NHKエンジニアリングサービスにあり、TAO/NICTの委託研究事業として実施されたものです。
+新アドレス [https://akihiko.shirai.as/adv3d/](https://akihiko.shirai.as/adv3d/) 
+
+
+次世代コンテント制作技術研究委員会は財団法人NHKエンジニアリングサービスにあり、TAO/NICTの委託研究事業として実施された研究の成果発信として製作されたものです。
+長年、株式会社オプトグラフ、株式会社ステラジアンさんに預かっていただきましたが、2022/3/12に白井のリポジトリに収容いたしました。
+
+連絡先のメールアドレスは届かないと思いますので何かありましたら、白井のTwitterまでどうぞ [Twitter@o_ob](https://twitter.com/o_ob)
+
 
 ## 次世代コンテント制作技術の研究について
 
